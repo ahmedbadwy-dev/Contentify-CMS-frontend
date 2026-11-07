@@ -27,6 +27,7 @@ const router = createRouter({
       name: 'Admin',
       path: '/admin',
       component: () => import('@/view/admin/AdminPage.vue'),
+      redirect: { name: 'Dashboard' },
       meta: { Auth: true },
       children: [
         {
@@ -49,36 +50,20 @@ const router = createRouter({
   ],
 })
 
-var isAuth = false
-router.beforeEach(async (to, from, next) => {
-  if (
-    to.matched.some((record) => {
-      return record.meta.Auth
-    })
-  ) {
-    if (isAuth == true) {
-      next()
-      return
-    }
-    try {
-      const resAuth = await checkAuth()
+router.beforeEach(async (to) => {
+  const requiresAuth = to.matched.some((record) => record.meta.Auth)
+  if (!requiresAuth) return true
 
-      if (resAuth.status != 200) {
-        toast.warning('ليس لك الصلاحيه للقيام بهذا العمل')
-        window.location.href = '/'
-        return
-      } else {
-        isAuth = true
-        next()
-        return
-      }
-    } catch (error) {
-      toast.error('حدث خطا غير متوقع')
-      window.location.href = '/'
-      return
-    }
+  try {
+    const resAuth = await checkAuth()
+    if (resAuth.status === 200) return true
+
+    toast.warning('ليس لك الصلاحيه للقيام بهذا العمل')
+    return { name: 'Login' }
+  } catch {
+    toast.error('حدث خطا غير متوقع')
+    return { name: 'Login' }
   }
-  next()
 })
 
 export default router

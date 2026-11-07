@@ -14,7 +14,6 @@
   </div>
   <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
-
       <button
         class="navbar-toggler"
         type="button"
@@ -28,11 +27,6 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
-  
-  
-
-
-
           <li class="nav-item">
             <RouterLink
               class="nav-link"
@@ -65,17 +59,18 @@
 import { useRoute } from 'vue-router'
 import { getUser } from '@/helper/GetUser.js'
 import { logoutHttp } from './actions/logout'
-import {  updatedPostData} from "@/stores/admin/UpdatedPostData";
+import { updatedPostData } from '@/stores/admin/UpdatedPostData'
 import { useToast } from 'vue-toastification'
-import { storeToRefs } from 'pinia';
+import { storeToRefs } from 'pinia'
+
 const toast = useToast()
-const{postEditState,postData}=storeToRefs(updatedPostData())
+const { postEditState, postData } = storeToRefs(updatedPostData())
 const userLogout = async () => {
   try {
     const apiRes = await logoutHttp()
     if (apiRes.status == 200) {
       toast.success(apiRes.message)
-      window.location="/"
+      window.location = '/'
     } else if (apiRes.status == 401) {
       toast.error('لا تمتلك الصلاحيه لهذا العمل')
     }
@@ -83,17 +78,13 @@ const userLogout = async () => {
     toast.error('حدث خطا غير متوقع')
   }
 }
-const changeEditState=()=>{
-  postEditState.value=false
-  postData.valu.id=""
-postData.value.title = ""
-  postData.valu.post_content=""
-
-
-  
+const changeEditState = () => {
+  postEditState.value = false
+  postData.value.id = ''
+  postData.value.title = ''
+  postData.value.post_content = ''
 }
+
 const connectedUser = getUser()
-
-
 const routes = useRoute()
 </script>

@@ -1,12 +1,11 @@
-const appApi = {
-  development: {
-    baseUrl: 'http://127.0.0.1:8000',
-    apiUrl: 'http://127.0.0.1:8000/api',
-  },
-  production: {
-    baseUrl: '',
-    apiUrl: '',
-  },
-  apiStatus: 'development',
+const development = {
+  baseUrl: 'http://127.0.0.1:8000',
+  apiUrl: 'http://127.0.0.1:8000/api',
 }
-export const App = appApi.apiStatus === 'development' ? appApi.development : appApi.production
+
+const production = {
+  baseUrl: import.meta.env.VITE_BASE_URL ?? '',
+  apiUrl: import.meta.env.VITE_API_URL ?? '/api',
+}
+
+export const App = import.meta.env.DEV ? development : production
