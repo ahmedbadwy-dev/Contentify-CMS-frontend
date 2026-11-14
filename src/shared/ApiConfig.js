@@ -4,8 +4,8 @@ const appApi = {
     apiUrl: 'http://127.0.0.1:8000/api',
   },
   production: {
-    baseUrl: 'https://ethiodeploy.app',
-    apiUrl: 'https://ethiodeploy.app/api',
+    baseUrl: 'https://taskmangment-backend.ethiodeploy.app',
+    apiUrl: 'https://taskmangment-backend.ethiodeploy.app/api',
   },
   apiStatus: 'production',
 }

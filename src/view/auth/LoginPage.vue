@@ -1,7 +1,7 @@
 <template>
   <div class="row">
-    <div class="col-4"></div>
-    <div class="col-4">
+  
+    <div class="col-md-6 col-lg-4 justify-content-center align-items-center">
       <div class="card">
         <div class="card-header">
           <h3 class="text-center">Login Page</h3>
@@ -26,7 +26,7 @@
         </div>
       </div>
     </div>
-    <div class="col-4"></div>
+
   </div>
 </template>
 <script setup>
