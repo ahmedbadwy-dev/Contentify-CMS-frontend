@@ -29,11 +29,7 @@ const router = createRouter({
       component: () => import('@/view/admin/AdminPage.vue'),
       meta: { Auth: true },
       children: [
-        {
-          name: 'Dashboard',
-          path: 'dashboard',
-          component: () => import('@/view/admin/DashboardPage.vue'),
-        },
+       
         {
           name: 'Create-Post',
           path: 'crate-post',
