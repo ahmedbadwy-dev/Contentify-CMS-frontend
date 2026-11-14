@@ -4,9 +4,9 @@ const appApi = {
     apiUrl: 'http://127.0.0.1:8000/api',
   },
   production: {
-    baseUrl: '',
-    apiUrl: '',
+    baseUrl: 'https://ethiodeploy.app',
+    apiUrl: 'https://ethiodeploy.app/api',
   },
-  apiStatus: 'development',
+  apiStatus: 'production',
 }
 export const App = appApi.apiStatus === 'development' ? appApi.development : appApi.production
