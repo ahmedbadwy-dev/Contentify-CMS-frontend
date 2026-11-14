@@ -1,5 +1,5 @@
 <template>
-  <div class="teble-responsive">
+  <div class="table-responsive">
     <table class="table table-dark table-striped">
       <thead>
         <tr>
@@ -15,7 +15,7 @@
           <td>{{ post?.title }}</td>
           <td>{{ post?.post_content }}</td>
            <td> 
-            <img height="60px" :src="`${App.baseUrl}/storage/${post?.image}`??'tvtr'">
+            <img height="60px" :src="`${App.baseUrl}/storage/${post?.image}`" alt="{{post?.title}}" title="{{post?.title}}">
               </td>
           <td>
             <button class="btn btn-success" @click="$emit('openModelEmit', post?.id)">
