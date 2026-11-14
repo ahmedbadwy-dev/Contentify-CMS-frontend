@@ -1,38 +1,69 @@
-# vue-project
+# 🚀 Contentify CMS — Modern Vue.js Single Page Application
 
-This template should help get you started developing with Vue 3 in Vite.
+A sleek, responsive, and scalable Single Page Application (SPA) built with **Vue 3** and **Bootstrap 5**, engineered to seamlessly consume a RESTful API for full content management and secure user authentication.
 
-## Recommended IDE Setup
+🔗 **Live Demo:** [https://vercel.app](https://vercel.app)  
+⚙️ **Backend Repository:** [taskMangment-backend](https://github.com)
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+---
 
-## Recommended Browser Setup
+## ✨ Key Features
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+- **🔐 Secure Authentication Flow:** Complete user registration, login, and session persistence powered by token-based authentication.
+- **📝 Full CRUD Operations:** Create, read, update, and delete posts effortlessly with instant UI reactivity and real-time feedback.
+- **🛡️ Protected Routes & Guards:** Client-side route protection using Vue Router navigation guards to secure private views and admin dashboards.
+- **📱 Responsive & Clean UI:** Crafted with **Bootstrap 5** grid system for a seamless experience across mobile, tablet, and desktop devices.
+- **🏗️ Modular Folder Architecture:** Organized into clean, decoupled layers (`views`, `components`, `router`, `shared`) following **Clean Code** principles for maximum maintainability and scalability.
 
-## Customize configuration
+---
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+## 🛠️ Tech Stack
 
-## Project Setup
+- **Framework:** Vue.js 3 (Composition / Options API)
+- **Routing:** Vue Router
+- **Styling:** Bootstrap 5 & Custom CSS
+- **Build Tool:** Vite
+- **Deployment:** Vercel (CI/CD integrated with GitHub)
 
-```sh
-npm install
+---
+
+## 📂 Project Architecture
+
+```text
+src/
+├── assets/          # Static assets & global styles
+├── components/      # Reusable UI components
+├── router/          # Route definitions & navigation guards
+├── shared/          # Centralized API configurations & services
+└── view/            # Page-level views (Auth, Posts, Admin Dashboard)
 ```
 
-### Compile and Hot-Reload for Development
+---
 
-```sh
-npm run dev
-```
+## 🚀 Getting Started Locally
 
-### Compile and Minify for Production
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com
+   cd Contentify-CMS-frontend
+   ```
 
-```sh
-npm run build
-```
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+3. **Configure API Endpoint:**
+   Update `src/shared/ApiConfig.js` to point to your local or production API URL.
+
+4. **Run the development server:**
+   ```bash
+   npm run dev
+   ```
+
+---
+
+## 👨‍💻 Author
+
+**Ahmed Badwy**  
+- GitHub: [@ahmedbadwy-dev](https://github.com)
