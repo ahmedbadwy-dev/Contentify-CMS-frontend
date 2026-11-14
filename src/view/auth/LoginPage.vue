@@ -1,7 +1,7 @@
 <template>
   <div class="row">
   
-    <div class="col-md-6 col-lg-4 justify-content-center align-items-center">
+    <div class="col-md-6 col-lg-4 offset-md-1 offset-lg-2 ">
       <div class="card">
         <div class="card-header">
           <h3 class="text-center">Login Page</h3>
@@ -68,7 +68,7 @@ const handleSubmit = async () => {
           tost.success('تم تسجيل الدخول بنجاح')
 
           localStorage.setItem('userData', JSON.stringify(res))
-          router.push({name:"Admin"})
+          router.push({name:"Post-List"})
         }
       }
     } catch (error) {

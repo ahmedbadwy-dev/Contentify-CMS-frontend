@@ -1,7 +1,7 @@
 <template>
   <div class="row">
     
-    <div class="col-md-6 col-lg-4 justify-content-center align-items-center">
+    <div class="col-md-6 col-lg-4  offset-md-1 offset-lg-2 ">
       <div class="card">
         <div class="card-header text-center">
           <h3>Register Page</h3>
